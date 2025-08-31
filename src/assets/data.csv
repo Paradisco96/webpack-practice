@@ -1,0 +1,6 @@
+product_id,name,category,price,in_stock
+101,Laptop,Electronics,1200,true
+102,Mouse,Electronics,25,true
+103,Coffee Maker,Home Appliances,80,false
+104,Running Shoes,Apparel,75,true
+105,T-shirt,Apparel,20,true
