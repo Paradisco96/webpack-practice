@@ -1,22 +1,35 @@
-/*
- * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./statistics.js":
+/***/ "./statistics.ts":
 /*!***********************!*\
-  !*** ./statistics.js ***!
+  !*** ./statistics.ts ***!
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"../node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\nfunction createStatistics() {\r\nlet counter = 0;\r\nlet isDestroyed = false;\r\nconst listener = () => counter++;\r\n\r\njquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', listener);\r\n\r\nreturn {\r\ndestroy() {\r\njquery__WEBPACK_IMPORTED_MODULE_0___default()(document).off('click', listener);\r\nisDestroyed = true;\r\nreturn 'Statistics fully destroyed';\r\n},\r\n\r\ngetClicks() {\r\nif (isDestroyed) return 'Statistics is destroyed';\r\nreturn counter;\r\n}\r\n}\r\n}\r\nwindow.statistics = createStatistics();\n\n//# sourceURL=webpack:///./statistics.js?\n}");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+function createStatistics() {
+  let counter = 0;
+  let isDestroyed = false;
+  const listener = () => counter + 1;
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('click', listener);
+  return {
+    destroy() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).off('click', listener);
+      isDestroyed = true;
+      return 'Statistics fully destroyed';
+    },
+    getClicks() {
+      if (isDestroyed) return 'Statistics is destroyed';
+      return counter;
+    }
+  };
+}
+window['statistics'] = createStatistics();
 
 /***/ })
 
@@ -180,8 +193,9 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jqu
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_jquery_dist_jquery_js"], () => (__webpack_require__("./statistics.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_jquery_dist_jquery_js"], () => (__webpack_require__("./statistics.ts")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
+//# sourceMappingURL=stat.js.map

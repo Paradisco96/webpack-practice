@@ -7,9 +7,11 @@ this.img = img
 
 toString() {
 return JSON.stringify({
-title: this.title,
-date: this.date.toJSON(),
-img: this.img
+  date: this.date.toJSON(),
+  img: this.img,
+title: this.title
 }, null, 2)
 }
 }
+let unused = 'unused'
+console.log(unused)
